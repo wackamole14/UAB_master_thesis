@@ -4,7 +4,17 @@
 
 ## Generating CNV data
 
+#### make_reduced_SV_results.VCF.py
 
+- Takes input: SV_results.VCF  and gives output: reduced_SV_results.VCF. Summarizes the results in the VCF to one column show presence or absence of CNV in Genome (consolidates CNV_R, CNV_Q)
+
+#### intersect_genes_TE.py
+
+- Which of the unique CNV IDs contain protein coding, non-protein coding regions? TEs? Start woking with the reduced_SV_results.VCF file as it has all the CNVs, where they are present, coordinates, and unique IDs.
+
+#### SVMU_euchromatin.py
+
+- Take in the Boundaries files and the SVMU results and filter for euchromatin regions on each chromosome. Turn these into sigle aggregate summary file that shows the SVMU results for each sample. Output: sorted_SVMU_summary.tsv
 
 
 ## TE analysis 
@@ -20,4 +30,5 @@
 ## Quality checks
 
 #### Graphs_SVs_QC.ipynb
+
 -  Check the concordance between the different sample sources
