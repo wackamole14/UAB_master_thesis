@@ -7,12 +7,12 @@
 #### prep_run_CNV2VCF.py
 
 - In working directory have:
--       sorted_dmel-all-r6.31.gtf
--       varSplitter
--       checkOvl
--       comSplitter 
--       CNV2VCF.py
--       CutTree.R
+-- sorted_dmel-all-r6.31.gtf
+-- varSplitter
+-- checkOvl
+-- comSplitter 
+-- CNV2VCF.py
+-- CutTree.R
 grab the {sample}.SV.info.txt files from the svmu results folder, get CNV-Q and CNV-R info only, export: sv.all.clean.txt
 
 
