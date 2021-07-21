@@ -18,3 +18,6 @@
 
 
 ## Quality checks
+
+#### Graphs_SVs_QC.ipynb
+-  Check the concordance between the different sample sources
