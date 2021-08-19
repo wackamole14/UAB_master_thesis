@@ -16,6 +16,11 @@
 grab the {sample}.SV.info.txt files from the svmu results folder, get CNV-Q and CNV-R info only, export: sv.all.clean.txt
 
 
+#### run CNV2VCF.py
+
+#### make 
+
+
 #### make_reduced_SV_results.VCF.py
 
 - Takes input: SV_results.VCF  and gives output: reduced_SV_results.VCF. Summarizes the results in the VCF to one column show presence or absence of CNV in Genome (consolidates CNV_R, CNV_Q)
