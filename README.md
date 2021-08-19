@@ -11,14 +11,18 @@
 -- varSplitter
 -- checkOvl
 -- comSplitter 
--- CNV2VCF.py
+-- Han2VCF.py
 -- CutTree.R
 grab the {sample}.SV.info.txt files from the svmu results folder, get CNV-Q and CNV-R info only, export: sv.all.clean.txt
 
 
-#### run CNV2VCF.py
+#### Han2VCF.py
+- modified script, combines individual results into combined VCF format. 
 
-#### make 
+
+
+#### SV_Analysis.py
+- Take the raw SVMU resultsand filter for euchromatin, and size. 
 
 
 #### make_reduced_SV_results.VCF.py
