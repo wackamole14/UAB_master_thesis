@@ -3,10 +3,7 @@
 
 
 
-
-
 ## Creating Liftoff files and summary
-
 
 #### run_Liftoff.sh
 - Take each assembly and run it though Liftoff. 
@@ -18,7 +15,7 @@
 - output: '{filename}\_sum.csv'
 
 
-### Sum_Liftoff.py
+#### Sum_Liftoff.py
 - Input: take each of the liftoff results files and turn it into a summary
 - Output: Liftoff_total_summary.csv
 
@@ -49,6 +46,7 @@ grab the {sample}.SV.info.txt files from the svmu results folder, get CNV-Q and 
 
 #### Han2VCF.py
 - modified script, combines individual results into combined VCF format. 
+- CNV2VCF_sub.sh
 
 
 
@@ -61,8 +59,10 @@ grab the {sample}.SV.info.txt files from the svmu results folder, get CNV-Q and 
 - Takes input: SV_results.VCF  and gives output: reduced_SV_results.VCF. Summarizes the results in the VCF to one column show presence or absence of CNV in Genome (consolidates CNV_R, CNV_Q)
 
 #### intersect_genes_TE.py
-
+- Inputs: reduced_SV_results.VCF, also need sorted_dmel-all-r6.31.gtf. 
 - Which of the unique CNV IDs contain protein coding, non-protein coding regions? TEs? Start woking with the reduced_SV_results.VCF file as it has all the CNVs, where they are present, coordinates, and unique IDs.
+- Output: Num_tes_per_CNV.txt
+- columns of Num_tes_per_CNV.txt: CNV_ID	Flavor	Genomes_present	G_ID	G_LEN	mRNA_count	Overlap	Num_samples	genic_region	Num_uniq_G_per_CNV	TE_LIST_PER_CNV	Samples_containing_TE	Num_TES_per_CNV
 
 -------
 ### BOUNDARIES process:
@@ -70,6 +70,7 @@ grab the {sample}.SV.info.txt files from the svmu results folder, get CNV-Q and 
 #### boundaries.py
 
 - This script grabs the liftoff results, and figures out the genes from a specified list, to figure out the euchromatin bouundaries. 
+- boundaries_sub.sh
 
 
 #### Find_nearest_gene_neighbor_boundary.ipynb
@@ -96,6 +97,8 @@ grab the {sample}.SV.info.txt files from the svmu results folder, get CNV-Q and 
 #### convert_TE_sheet.ipynb
 
 - Converts TEAnnot files into a format that can be added to the master TE list created by Santiago. This adds shared and unique TEs, and updates the total count of samples that contain the TE, in order to later intersect that TE list with the CNV list. 
+Input: New TEAnnot files (long files in this case)
+Output:  All_TE_sheet.txt  
 
 
 ## Quality checks
