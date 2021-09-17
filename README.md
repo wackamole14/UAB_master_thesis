@@ -41,7 +41,7 @@ grab the {sample}.SV.info.txt files from the svmu results folder, get CNV-Q and 
 - This script grabs the liftoff results, and figures out the genes from a specified list, to figure out the euchromatin bouundaries. 
 
 
-#### boundaries.py
+#### Find_nearest_gene_neighbor_boundary.ipynb
 
 - This script is run on the files that did not have the genes we needed to find the euchromatin boundaries. This will find the nearest neighbor! 
 
