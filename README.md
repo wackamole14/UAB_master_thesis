@@ -80,14 +80,17 @@ grab the {sample}.SV.info.txt files from the svmu results folder, get CNV-Q and 
 
 #### make_bounds.py
 
-- This takes all the corrected boundaries files, and grabs only the info we need to calculate the total euchromatin lengths. 
+- Input: This takes all the corrected boundaries files, and grabs only the info we need to calculate the total euchromatin lengths. 
+- Output: bounds_{filename}
 
 #### sum_boundaries.py
-- This sums these euchromatin lengths. 
+- This sums the previous step's euchromatin lengths. 
+- Output: boundaries_summary.csv
 
 #### SVMU_euchromatin.py
 
-- Take in the Boundaries files and the SVMU results and filter for euchromatin regions on each chromosome. Turn these into sigle aggregate summary file that shows the SVMU results for each sample. Output: sorted_SVMU_summary.tsv
+- Input: Take in the Boundaries files and the SVMU results and filter for euchromatin regions on each chromosome. Turn these into sigle aggregate summary file that shows the SVMU results for each sample.
+- Output: sorted_SVMU_summary.tsv
 
 
 ## TE analysis 
@@ -95,8 +98,8 @@ grab the {sample}.SV.info.txt files from the svmu results folder, get CNV-Q and 
 #### convert_TE_sheet.ipynb
 
 - Converts TEAnnot files into a format that can be added to the master TE list created by Santiago. This adds shared and unique TEs, and updates the total count of samples that contain the TE, in order to later intersect that TE list with the CNV list. 
-Input: New TEAnnot files (long files in this case)
-Output:  All_TE_sheet.txt  
+- Input: New TEAnnot files (long files in this case)
+- Output:  All_TE_sheet.txt  
 
 
 ## Quality checks
