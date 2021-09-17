@@ -5,7 +5,7 @@
 
 
 
-## Creating Liftoff summary
+## Creating Liftoff files and summary
 
 
 #### run_Liftoff.sh
@@ -17,11 +17,14 @@
 - Take the individual liftoff results files and turn them into short summary files. 
 - output: '{filename}\_sum.csv'
 
-#### sum_liftoff_totals.py
-- take the inputs from step above "strain_summary.py" and dum them to create the combined Liftoff results file. 
-- output: 'liftoff_summary.csv ' 
+
+### Sum_Liftoff.py
+- Input: take each of the liftoff results files and turn it into a summary
+- Output: Liftoff_total_summary.csv
 
 
+
+##  Creating SVMU results
 
 #### SVMU_sub.sh 
 - generate the SVMU results with the nucmer, liftoff and lastz inputs.
