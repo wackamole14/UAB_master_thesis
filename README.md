@@ -1,5 +1,12 @@
 # UAB_master_thesis
 
+## Creating Liftoff summary
+
+#### strain_summary.py
+
+### combine_liftoff_sums.py
+
+
 
 
 ## Generating CNV data
