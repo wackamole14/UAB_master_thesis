@@ -3,8 +3,8 @@
 ## Creating Liftoff summary
 
 #### strain_summary.py
--Take the individual liftoff results files and turn them into short summary files. 
--output: '{filename}_sum.csv'
+- Take the individual liftoff results files and turn them into short summary files. 
+- output: '{filename}_sum.csv'
 
 #### sum_liftoff_totals.py
 - take the inputs from step above "strain_summary.py" and dum them to create the combined Liftoff results file. 
