@@ -65,7 +65,7 @@ grab the {sample}.SV.info.txt files from the svmu results folder, get CNV-Q and 
 - columns of Num_tes_per_CNV.txt: CNV_ID	Flavor	Genomes_present	G_ID	G_LEN	mRNA_count	Overlap	Num_samples	genic_region	Num_uniq_G_per_CNV	TE_LIST_PER_CNV	Samples_containing_TE	Num_TES_per_CNV
 
 -------
-### BOUNDARIES process:
+### BOUNDARIES identify and filter:
 
 #### boundaries.py
 
@@ -83,10 +83,8 @@ grab the {sample}.SV.info.txt files from the svmu results folder, get CNV-Q and 
 - This takes all the corrected boundaries files, and grabs only the info we need to calculate the total euchromatin lengths. 
 
 #### sum_boundaries.py
-
 - This sums these euchromatin lengths. 
 
--------
 #### SVMU_euchromatin.py
 
 - Take in the Boundaries files and the SVMU results and filter for euchromatin regions on each chromosome. Turn these into sigle aggregate summary file that shows the SVMU results for each sample. Output: sorted_SVMU_summary.tsv
