@@ -59,16 +59,15 @@ def run_CNV2VCF():
 
 
 def run():
-	#parse_sv_info_files()
-	#make_chakraborty()
-	#run_CNV2VCF()
+	parse_sv_info_files()
+	make_chakraborty()
+	run_CNV2VCF()
 
 
 #-------------------------------
 
 
 run()
-boundaries_MUN013_liftoff.csv
-boundaries_MUN013_liftoff.csv
+
 
 
