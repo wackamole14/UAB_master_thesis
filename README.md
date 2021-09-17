@@ -76,5 +76,6 @@ grab the {sample}.SV.info.txt files from the svmu results folder, get CNV-Q and 
 
 ## Attempts that didn't make it to the paper:
 
-
+#### compare_euchromatin_genes.ipynb
+- This was to get all the euchromatin from all the samples, and calculate the number of bases involved... it works. 
 
