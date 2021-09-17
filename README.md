@@ -1,6 +1,17 @@
 # UAB_master_thesis
 
+
+
+
+
+
 ## Creating Liftoff summary
+
+
+#### run_Liftoff.sh
+- Take each assembly and run it though Liftoff. 
+- output: ${FILE_NAME}\_liftoff
+
 
 #### strain_summary.py
 - Take the individual liftoff results files and turn them into short summary files. 
@@ -12,13 +23,10 @@
 
 
 
-
-
-####SVMU_sub.sh 
+#### SVMU_sub.sh 
 - generate the SVMU results with the nucmer, liftoff and lastz inputs.
 - Inputs:  {filename}.fa    (the raw assemblies), ${FILE}\_lastz.txt  (the lastz output), ${FILE}2ISO.mm.delta ( the nucmer output)
 - Output: all files in the SVMU folder in /CNV/svmu
-
 
 
 
