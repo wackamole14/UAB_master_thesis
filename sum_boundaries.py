@@ -53,3 +53,5 @@ def process_file(filename, df, df_1, read_single):
 def run():
         #read_single()
         read_in_reff()
+        
+run()
