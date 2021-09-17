@@ -4,11 +4,21 @@
 
 #### strain_summary.py
 - Take the individual liftoff results files and turn them into short summary files. 
-- output: '{filename}_sum.csv'
+- output: '{filename}\_sum.csv'
 
 #### sum_liftoff_totals.py
 - take the inputs from step above "strain_summary.py" and dum them to create the combined Liftoff results file. 
 - output: 'liftoff_summary.csv ' 
+
+
+
+
+
+####SVMU_sub.sh 
+- generate the SVMU results with the nucmer, liftoff and lastz inputs.
+- Inputs:  {filename}.fa    (the raw assemblies), ${FILE}\_lastz.txt  (the lastz output), ${FILE}2ISO.mm.delta ( the nucmer output)
+- Output: all files in the SVMU folder in /CNV/svmu
+
 
 
 
