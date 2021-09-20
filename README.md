@@ -6,12 +6,12 @@
 ## Creating Liftoff files and summary
 
 #### run_Liftoff.sh
-- Take each assembly and run it though Liftoff. 
+- Input: Take each assembly and run it though Liftoff. 
 - Output: ${FILE_NAME}\_liftoff
 
 
 #### strain_summary.py
-- Take the individual liftoff results from previous step (${FILE_NAME}\_liftoff) files and turn them into short summary of each individual file. 
+- Input: Take the individual liftoff results from previous step (${FILE_NAME}\_liftoff) files and turn them into short summary of each individual file. 
 - Output: '{filename}\_sum.csv'
 
 
