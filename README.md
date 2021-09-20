@@ -7,16 +7,16 @@
 
 #### run_Liftoff.sh
 - Take each assembly and run it though Liftoff. 
-- output: ${FILE_NAME}\_liftoff
+- Output: ${FILE_NAME}\_liftoff
 
 
 #### strain_summary.py
-- Take the individual liftoff results files and turn them into short summary files. 
-- output: '{filename}\_sum.csv'
+- Take the individual liftoff results from previous step (${FILE_NAME}\_liftoff) files and turn them into short summary of each individual file. 
+- Output: '{filename}\_sum.csv'
 
 
 #### Sum_Liftoff.py
-- Input: take each of the liftoff results files and turn it into a summary
+- Input: take each of the liftoff results files from previous step (strain_summary.py) and turn it into official Total Summary.
 - Output: Liftoff_total_summary.csv
 
 
@@ -41,27 +41,37 @@
 -- comSplitter 
 -- Han2VCF.py
 -- CutTree.R
-grab the {sample}.SV.info.txt files from the svmu results folder, get CNV-Q and CNV-R info only, export: sv.all.clean.txt
+- Grabs the {sample}.SV.info.txt files from the svmu results folder, get CNV-Q and CNV-R info only, 
+- Output: sv.all.clean.txt
 
 
 #### Han2VCF.py
-- modified script, combines individual results into combined VCF format. 
-- CNV2VCF_sub.sh
+
+- Modified Chakraborty script, combines individual results into combined VCF format. 
+- can send to Slurm via : CNV2VCF_sub.sh
+- Output: /svmu/FILTERNG files
 
 
 
 #### SV_Analysis.py
-- Take the raw SVMU resultsand filter for euchromatin, and size. 
+
+- Filter for euchromatin, and size. 
+- Input: the SVMU FILTERING results from the previous step.
+- Output: SV_results.VCF 
 
 
 #### make_reduced_SV_results.VCF.py
 
-- Takes input: SV_results.VCF  and gives output: reduced_SV_results.VCF. Summarizes the results in the VCF to one column show presence or absence of CNV in Genome (consolidates CNV_R, CNV_Q)
+- Summarizes the results in the VCF to one column show presence or absence of CNV in Genome (consolidates CNV_R, CNV_Q)
+- Input: SV_results.VCF   
+- output: reduced_SV_results.VCF. 
 
 #### intersect_genes_TE.py
-- Inputs: reduced_SV_results.VCF, also need sorted_dmel-all-r6.31.gtf. 
+
 - Which of the unique CNV IDs contain protein coding, non-protein coding regions? TEs? Start woking with the reduced_SV_results.VCF file as it has all the CNVs, where they are present, coordinates, and unique IDs.
+- Inputs: reduced_SV_results.VCF, also need sorted_dmel-all-r6.31.gtf. 
 - Output: Num_tes_per_CNV.txt
+
 - columns of Num_tes_per_CNV.txt: CNV_ID	Flavor	Genomes_present	G_ID	G_LEN	mRNA_count	Overlap	Num_samples	genic_region	Num_uniq_G_per_CNV	TE_LIST_PER_CNV	Samples_containing_TE	Num_TES_per_CNV
 
 -------
@@ -70,26 +80,30 @@ grab the {sample}.SV.info.txt files from the svmu results folder, get CNV-Q and 
 #### boundaries.py
 
 - This script grabs the liftoff results, and figures out the genes from a specified list, to figure out the euchromatin bouundaries. 
-- boundaries_sub.sh
+- can send to Slurm with: boundaries_sub.sh
+- Input: Lifotff results for each file  (also can input different list of genes used for boundaries)
+- Output: boundaries_{filename}.csv
 
 
 #### Find_nearest_gene_neighbor_boundary.ipynb
 
 - This script is run on the files that did not have the genes we needed to find the euchromatin boundaries. This will find the nearest neighbor! 
+- Input: Liftoff results of the file that is missing genes. 
+- Output:  boundaries_{filename}.csv
 
 
 #### make_bounds.py
 
-- Input: This takes all the corrected boundaries files, and grabs only the info we need to calculate the total euchromatin lengths. 
+- Input: This takes all the corrected boundaries files from the previous step (boundaries_{filename}.csv) and grabs only the info we need to calculate the total euchromatin lengths. 
 - Output: bounds_{filename}
 
 #### sum_boundaries.py
-- This sums the previous step's euchromatin lengths. 
+- Input: This sums the previous step's euchromatin lengths (bounds_{filename}). 
 - Output: boundaries_summary.csv
 
 #### SVMU_euchromatin.py
 
-- Input: Take in the Boundaries files and the SVMU results and filter for euchromatin regions on each chromosome. Turn these into sigle aggregate summary file that shows the SVMU results for each sample.
+- Input: Take in the Boundaries files and the SVMU results and filter for euchromatin regions on each chromosome. Turn these into single aggregate summary file that shows the SVMU results for each sample.
 - Output: sorted_SVMU_summary.tsv
 
 
